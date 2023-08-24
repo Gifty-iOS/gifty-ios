@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     private let detectBarcodeService = DetectBarcodeService()
     private let searchButton = SearchButton()
-    private let giftBoxImage = UIImageView(image: UIImage(named: "GiftBox"))
+    private let giftBoxImage = GiftBoxImage(image: UIImage(named: "GiftBox"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         }
         searchButton.setupAction(action: customAction)
         view.addSubview(searchButton)
+        view.addSubview(giftBoxImage)
     }
     
     private func setLayout() {

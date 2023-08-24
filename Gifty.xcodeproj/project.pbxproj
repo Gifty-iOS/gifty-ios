@@ -20,6 +20,7 @@
 		43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116D2A972C9500939C9C /* UIColor+Hex.swift */; };
 		43F711702A972EF400939C9C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116F2A972EF400939C9C /* Const.swift */; };
 		43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711742A9733E000939C9C /* DetectBarcodeService.swift */; };
+		43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711762A97481C00939C9C /* GiftBoxImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		43F7116D2A972C9500939C9C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		43F7116F2A972EF400939C9C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		43F711742A9733E000939C9C /* DetectBarcodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectBarcodeService.swift; sourceTree = "<group>"; };
+		43F711762A97481C00939C9C /* GiftBoxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBoxImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				43F7116A2A972B5300939C9C /* SearchButton.swift */,
+				43F711762A97481C00939C9C /* GiftBoxImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				43D2A45C2A964B2A002453BE /* MainViewController.swift in Sources */,
 				43D2A4582A964B2A002453BE /* AppDelegate.swift in Sources */,
 				43D2A45A2A964B2A002453BE /* SceneDelegate.swift in Sources */,
+				43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */,
 				43F7116B2A972B5300939C9C /* SearchButton.swift in Sources */,
 				43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */,
 				43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */,
