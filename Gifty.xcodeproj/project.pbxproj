@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		43D2A4582A964B2A002453BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A4572A964B2A002453BE /* AppDelegate.swift */; };
 		43D2A45A2A964B2A002453BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A4592A964B2A002453BE /* SceneDelegate.swift */; };
-		43D2A45C2A964B2A002453BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A45B2A964B2A002453BE /* ViewController.swift */; };
+		43D2A45C2A964B2A002453BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A45B2A964B2A002453BE /* MainViewController.swift */; };
 		43D2A45F2A964B2A002453BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D2A45D2A964B2A002453BE /* Main.storyboard */; };
 		43D2A4612A964B2D002453BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D2A4602A964B2D002453BE /* Assets.xcassets */; };
 		43D2A4642A964B2D002453BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D2A4622A964B2D002453BE /* LaunchScreen.storyboard */; };
 		43D2A46F2A964B2E002453BE /* GiftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A46E2A964B2E002453BE /* GiftyTests.swift */; };
 		43D2A4792A964B2E002453BE /* GiftyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A4782A964B2E002453BE /* GiftyUITests.swift */; };
 		43D2A47B2A964B2E002453BE /* GiftyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A47A2A964B2E002453BE /* GiftyUITestsLaunchTests.swift */; };
+		43F7116B2A972B5300939C9C /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116A2A972B5300939C9C /* SearchButton.swift */; };
+		43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116D2A972C9500939C9C /* UIColor+Hex.swift */; };
+		43F711702A972EF400939C9C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116F2A972EF400939C9C /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		43D2A4542A964B2A002453BE /* Gifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D2A4572A964B2A002453BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43D2A4592A964B2A002453BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		43D2A45B2A964B2A002453BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43D2A45B2A964B2A002453BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		43D2A45E2A964B2A002453BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43D2A4602A964B2D002453BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D2A4632A964B2D002453BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		43D2A4742A964B2E002453BE /* GiftyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D2A4782A964B2E002453BE /* GiftyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftyUITests.swift; sourceTree = "<group>"; };
 		43D2A47A2A964B2E002453BE /* GiftyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43F7116A2A972B5300939C9C /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		43F7116D2A972C9500939C9C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		43F7116F2A972EF400939C9C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,11 @@
 		43D2A4562A964B2A002453BE /* Gifty */ = {
 			isa = PBXGroup;
 			children = (
+				43F7116C2A972C7500939C9C /* Util */,
+				43F711692A972B3A00939C9C /* View */,
+				43F711682A972B0B00939C9C /* ViewController */,
 				43D2A4572A964B2A002453BE /* AppDelegate.swift */,
 				43D2A4592A964B2A002453BE /* SceneDelegate.swift */,
-				43D2A45B2A964B2A002453BE /* ViewController.swift */,
 				43D2A45D2A964B2A002453BE /* Main.storyboard */,
 				43D2A4602A964B2D002453BE /* Assets.xcassets */,
 				43D2A4622A964B2D002453BE /* LaunchScreen.storyboard */,
@@ -125,6 +133,31 @@
 				43D2A47A2A964B2E002453BE /* GiftyUITestsLaunchTests.swift */,
 			);
 			path = GiftyUITests;
+			sourceTree = "<group>";
+		};
+		43F711682A972B0B00939C9C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43D2A45B2A964B2A002453BE /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		43F711692A972B3A00939C9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43F7116A2A972B5300939C9C /* SearchButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43F7116C2A972C7500939C9C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				43F7116D2A972C9500939C9C /* UIColor+Hex.swift */,
+				43F7116F2A972EF400939C9C /* Const.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D2A45C2A964B2A002453BE /* ViewController.swift in Sources */,
+				43D2A45C2A964B2A002453BE /* MainViewController.swift in Sources */,
 				43D2A4582A964B2A002453BE /* AppDelegate.swift in Sources */,
 				43D2A45A2A964B2A002453BE /* SceneDelegate.swift in Sources */,
+				43F7116B2A972B5300939C9C /* SearchButton.swift in Sources */,
+				43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */,
+				43F711702A972EF400939C9C /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +486,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +515,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

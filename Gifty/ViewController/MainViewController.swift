@@ -8,12 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    private let searchButton = SearchButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let button1 = UIButton()
-        let button2 = UIButton()
+        addSubviews()
+        setLayout()
+    }
+    
+    func addSubviews() {
+        view.addSubview(searchButton)
+    }
+    
+    func setLayout() {
         
     }
 }
