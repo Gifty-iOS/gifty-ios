@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     private let detectBarcodeService = DetectBarcodeService()
     private let searchButton = SearchButton()
+    private let giftBoxImage = UIImageView(image: UIImage(named: "GiftBox"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
