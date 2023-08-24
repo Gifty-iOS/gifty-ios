@@ -19,6 +19,7 @@
 		43F7116B2A972B5300939C9C /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116A2A972B5300939C9C /* SearchButton.swift */; };
 		43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116D2A972C9500939C9C /* UIColor+Hex.swift */; };
 		43F711702A972EF400939C9C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116F2A972EF400939C9C /* Const.swift */; };
+		43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711742A9733E000939C9C /* DetectBarcodeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		43F7116A2A972B5300939C9C /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		43F7116D2A972C9500939C9C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		43F7116F2A972EF400939C9C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		43F711742A9733E000939C9C /* DetectBarcodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectBarcodeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		43D2A4562A964B2A002453BE /* Gifty */ = {
 			isa = PBXGroup;
 			children = (
+				43F711732A9733BA00939C9C /* Service */,
 				43F7116C2A972C7500939C9C /* Util */,
 				43F711692A972B3A00939C9C /* View */,
 				43F711682A972B0B00939C9C /* ViewController */,
@@ -158,6 +161,14 @@
 				43F7116F2A972EF400939C9C /* Const.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		43F711732A9733BA00939C9C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				43F711742A9733E000939C9C /* DetectBarcodeService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				43D2A45A2A964B2A002453BE /* SceneDelegate.swift in Sources */,
 				43F7116B2A972B5300939C9C /* SearchButton.swift in Sources */,
 				43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */,
+				43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */,
 				43F711702A972EF400939C9C /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

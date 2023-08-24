@@ -23,6 +23,12 @@ class SearchButton: UIButton {
         setupText()
     }
     
+    func setupAction(action: UIAction? = nil) {
+        if let action = action {
+            addAction(action, for: .touchUpInside)
+        }
+    }
+    
     func setupText() {
         setTitle("기프티콘 찾기!", for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)

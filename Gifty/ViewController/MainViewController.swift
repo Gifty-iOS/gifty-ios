@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private let detectBarcodeService = DetectBarcodeService()
     private let searchButton = SearchButton()
     
     override func viewDidLoad() {
@@ -17,11 +18,19 @@ class ViewController: UIViewController {
         setLayout()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
+        let customAction = UIAction { _ in
+            self.detectBarcodeService.detectBarcodeInImage(images: [
+                UIImage(named: "1")!,
+                UIImage(named: "2")!,
+                UIImage(named: "3")!,
+            ])
+        }
+        searchButton.setupAction(action: customAction)
         view.addSubview(searchButton)
     }
     
-    func setLayout() {
+    private func setLayout() {
         
     }
 }
