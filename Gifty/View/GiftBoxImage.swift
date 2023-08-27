@@ -8,12 +8,12 @@
 import UIKit
 
 class GiftBoxImage: UIImageView {
-    private let width: CGFloat = 160
-    private let height: CGFloat = 160
+    private let width: CGFloat = 150
+    private let height: CGFloat = 150
     
     override init(image: UIImage?) {
         super.init(image: image)
-        self.frame = CGRect(x: Const.Screen.width / 2 - width / 2, y: Const.Screen.height / 2 - 180, width: width, height: height)
+        self.frame = CGRect(x: Const.Screen.width / 2 - width / 2, y: Const.Screen.height / 2 - 170, width: width, height: height)
     }
     
     required init?(coder: NSCoder) {
