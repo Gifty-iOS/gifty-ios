@@ -28,9 +28,6 @@ class ViewController: UIViewController {
                     rangePopup.removeFromSuperview()
                     self.detectBarcodeService.detectBarcodeInImage(images: [])
                     rangePopup.removeFromSuperview()
-                },
-                cancel: UIAction { _ in
-                    rangePopup.removeFromSuperview()
                 }
             )
             

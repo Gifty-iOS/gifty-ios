@@ -131,13 +131,9 @@ class RangePopup: UIButton {
         title.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
     }
     
-    func setupAction(submit: UIAction? = nil, cancel: UIAction? = nil) {
+    func setupAction(submit: UIAction? = nil) {
         if let submit = submit {
             submitButton.addAction(submit, for: .touchUpInside)
         }
-        if let cancel = cancel {
-            cancelButton.addAction(cancel, for: .touchUpInside)
-        }
-    
     }
 }
