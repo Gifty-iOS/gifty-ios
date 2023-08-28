@@ -20,14 +20,20 @@ class ViewController: UIViewController {
     }
     
     private func addSubviews() {
-        let customAction = UIAction { _ in
-            self.detectBarcodeService.detectBarcodeInImage(images: [
-                UIImage(named: "1")!,
-                UIImage(named: "2")!,
-                UIImage(named: "3")!,
-            ])
+        let serchButtonAction = UIAction { [self] _ in
+            let rangePopup = RangePopup(maxLen: 10)
+            
+            rangePopup.setupAction(
+                submit: UIAction { _ in
+                    rangePopup.removeFromSuperview()
+                    self.detectBarcodeService.detectBarcodeInImage(images: [])
+                    rangePopup.removeFromSuperview()
+                }
+            )
+            
+            self.view.addSubview(rangePopup)
         }
-        searchButton.setupAction(action: customAction)
+        searchButton.setupAction(action: serchButtonAction)
         view.addSubview(searchButton)
         view.addSubview(giftBoxImage)
     }
