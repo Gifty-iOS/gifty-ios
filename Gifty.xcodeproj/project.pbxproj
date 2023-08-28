@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43A134DA2A9CE4B500428DC6 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */; };
 		43B9D0482A9B89E600EB8669 /* RangePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9D0472A9B89E600EB8669 /* RangePopup.swift */; };
 		43D2A4582A964B2A002453BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A4572A964B2A002453BE /* AppDelegate.swift */; };
 		43D2A45A2A964B2A002453BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A4592A964B2A002453BE /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+LeftPadding.swift"; sourceTree = "<group>"; };
 		43B9D0472A9B89E600EB8669 /* RangePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangePopup.swift; sourceTree = "<group>"; };
 		43D2A4542A964B2A002453BE /* Gifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D2A4572A964B2A002453BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				43F7116D2A972C9500939C9C /* UIColor+Hex.swift */,
 				43F7116F2A972EF400939C9C /* Const.swift */,
+				43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */,
 				43B9D0482A9B89E600EB8669 /* RangePopup.swift in Sources */,
 				43F7116B2A972B5300939C9C /* SearchButton.swift in Sources */,
+				43A134DA2A9CE4B500428DC6 /* UITextField+LeftPadding.swift in Sources */,
 				43F7116E2A972C9500939C9C /* UIColor+Hex.swift in Sources */,
 				43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */,
 				43F711702A972EF400939C9C /* Const.swift in Sources */,

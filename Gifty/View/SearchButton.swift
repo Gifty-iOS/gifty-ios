@@ -13,12 +13,11 @@ class SearchButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupGradient()
     }
     
     init() {
         super.init(frame: CGRect(x: Const.Screen.width / 2 - width / 2, y: Const.Screen.height / 2, width: width, height: height))
-        setupGradient()
+        setupGradient(view: self)
         setupStyle()
         setupText()
     }
@@ -40,9 +39,9 @@ class SearchButton: UIButton {
         layer.masksToBounds = true
     }
     
-    func setupGradient() {
+    func setupGradient(view: UIView) {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.bounds
+        gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor.init(hexCode: Const.Color.gradientFirst),
             UIColor.init(hexCode: Const.Color.gradientSecond),
@@ -52,7 +51,7 @@ class SearchButton: UIButton {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
         gradientLayer.locations = [0, 0.5, 1]
         
-        layer.addSublayer(gradientLayer)
+        view.layer.addSublayer(gradientLayer)
     }
     
     required init?(coder: NSCoder) {

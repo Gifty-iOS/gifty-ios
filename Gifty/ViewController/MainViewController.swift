@@ -21,8 +21,20 @@ class ViewController: UIViewController {
     
     private func addSubviews() {
         let serchButtonAction = UIAction { [self] _ in
-            let customPopup = RangePopup()
-            self.view.addSubview(customPopup)
+            let rangePopup = RangePopup(maxLen: 10)
+            
+            rangePopup.setupAction(
+                submit: UIAction { _ in
+                    rangePopup.removeFromSuperview()
+                    self.detectBarcodeService.detectBarcodeInImage(images: [])
+                    rangePopup.removeFromSuperview()
+                },
+                cancel: UIAction { _ in
+                    rangePopup.removeFromSuperview()
+                }
+            )
+            
+            self.view.addSubview(rangePopup)
         }
         searchButton.setupAction(action: serchButtonAction)
         view.addSubview(searchButton)
