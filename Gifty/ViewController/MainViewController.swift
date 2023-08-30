@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Jito
 
 class ViewController: UIViewController {
     private let detectBarcodeService = DetectBarcodeService()

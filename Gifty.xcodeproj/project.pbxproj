@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4338F7EE2A9F1DE300D8F511 /* Jito in Frameworks */ = {isa = PBXBuildFile; productRef = 4338F7ED2A9F1DE300D8F511 /* Jito */; };
+		4338F7F02A9F1DE300D8F511 /* JitoClient in Frameworks */ = {isa = PBXBuildFile; productRef = 4338F7EF2A9F1DE300D8F511 /* JitoClient */; };
 		43A134DA2A9CE4B500428DC6 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */; };
 		43B9D0482A9B89E600EB8669 /* RangePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9D0472A9B89E600EB8669 /* RangePopup.swift */; };
 		43D2A4582A964B2A002453BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2A4572A964B2A002453BE /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4338F7EE2A9F1DE300D8F511 /* Jito in Frameworks */,
+				4338F7F02A9F1DE300D8F511 /* JitoClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +200,10 @@
 			dependencies = (
 			);
 			name = Gifty;
+			packageProductDependencies = (
+				4338F7ED2A9F1DE300D8F511 /* Jito */,
+				4338F7EF2A9F1DE300D8F511 /* JitoClient */,
+			);
 			productName = Gifty;
 			productReference = 43D2A4542A964B2A002453BE /* Gifty.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 43D2A44B2A964B2A002453BE;
+			packageReferences = (
+				4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */,
+			);
 			productRefGroup = 43D2A4552A964B2A002453BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -669,6 +680,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojitoBar/jito-macros";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4338F7ED2A9F1DE300D8F511 /* Jito */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */;
+			productName = Jito;
+		};
+		4338F7EF2A9F1DE300D8F511 /* JitoClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */;
+			productName = JitoClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43D2A44C2A964B2A002453BE /* Project object */;
 }
