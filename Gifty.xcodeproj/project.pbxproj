@@ -104,6 +104,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4338F7F82AA0839A00D8F511 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43F7116A2A972B5300939C9C /* SearchButton.swift */,
+				43F711762A97481C00939C9C /* GiftBoxImage.swift */,
+				43B9D0472A9B89E600EB8669 /* RangePopup.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		43D2A44B2A964B2A002453BE = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +140,7 @@
 				4338F7F72AA06B9B00D8F511 /* Resources */,
 				43F711732A9733BA00939C9C /* Service */,
 				43F7116C2A972C7500939C9C /* Global */,
-				43F711692A972B3A00939C9C /* View */,
+				43F711692A972B3A00939C9C /* Presentation */,
 				43F711682A972B0B00939C9C /* ViewController */,
 				43D2A4572A964B2A002453BE /* AppDelegate.swift */,
 				43D2A4592A964B2A002453BE /* SceneDelegate.swift */,
@@ -163,14 +173,12 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		43F711692A972B3A00939C9C /* View */ = {
+		43F711692A972B3A00939C9C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				43F7116A2A972B5300939C9C /* SearchButton.swift */,
-				43F711762A97481C00939C9C /* GiftBoxImage.swift */,
-				43B9D0472A9B89E600EB8669 /* RangePopup.swift */,
+				4338F7F82AA0839A00D8F511 /* View */,
 			);
-			path = View;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		43F7116C2A972C7500939C9C /* Global */ = {
