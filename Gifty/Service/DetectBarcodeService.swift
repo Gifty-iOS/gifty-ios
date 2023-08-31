@@ -38,7 +38,7 @@ class DetectBarcodeService {
         }
     }
 
-    private func processBarcodes(request: VNRequest, in cgImage: CGImage) {
+    func processBarcodes(request: VNRequest, in cgImage: CGImage) {
         guard let results = request.results as? [VNBarcodeObservation] else {
             return
         }
