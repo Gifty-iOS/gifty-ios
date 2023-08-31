@@ -24,22 +24,23 @@ class ViewController: UIViewController {
     
     private func setAction() {
         let serchButtonAction = UIAction { [self] _ in
-            photoLibraryService.requestPermission { status in
+            photoLibraryService.requestPermission { [self] status in
                 if (!status) {
-                    print("전체 권한을 허용해주세요.")
+                    let requestAlert = photoLibraryService.createPhotoLibraryRequestAlert()
+                    present(requestAlert, animated: true, completion: nil)
                     return
                 }
                 
-                let photoCount = self.photoLibraryService.getPhotoCount()
+                let photoCount = photoLibraryService.getPhotoCount()
                 let rangePopup = RangePopup(maxLen: photoCount)
                 
                 rangePopup.setupAction(
-                    submit: UIAction { _ in
+                    submit: UIAction { [self] _ in
                         rangePopup.removeFromSuperview()
-                        self.detectBarcodeService.detectBarcodeInImage(images: [])
+                        detectBarcodeService.detectBarcodeInImage(images: [])
                     }
                 )
-                self.view.addSubview(rangePopup)
+                view.addSubview(rangePopup)
             }
         }
         searchButton.setupAction(action: serchButtonAction)
