@@ -9,6 +9,7 @@ import UIKit
 import Jito
 
 class ViewController: UIViewController {
+    private let photoLibraryService = PhotoLibraryService()
     private let detectBarcodeService = DetectBarcodeService()
     private let searchButton = SearchButton()
     private let giftBoxImage = GiftBoxImage(image: UIImage(named: "GiftBox"))
@@ -16,25 +17,35 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setAction()
         addSubviews()
         setLayout()
     }
     
-    private func addSubviews() {
+    private func setAction() {
         let serchButtonAction = UIAction { [self] _ in
-            let rangePopup = RangePopup(maxLen: 10)
-            
-            rangePopup.setupAction(
-                submit: UIAction { _ in
-                    rangePopup.removeFromSuperview()
-                    self.detectBarcodeService.detectBarcodeInImage(images: [])
-                    rangePopup.removeFromSuperview()
+            photoLibraryService.requestPermission { status in
+                if (!status) {
+                    print("전체 권한을 허용해주세요.")
+                    return
                 }
-            )
-            
-            self.view.addSubview(rangePopup)
+                
+                let photoCount = self.photoLibraryService.getPhotoCount()
+                let rangePopup = RangePopup(maxLen: photoCount)
+                
+                rangePopup.setupAction(
+                    submit: UIAction { _ in
+                        rangePopup.removeFromSuperview()
+                        self.detectBarcodeService.detectBarcodeInImage(images: [])
+                    }
+                )
+                self.view.addSubview(rangePopup)
+            }
         }
         searchButton.setupAction(action: serchButtonAction)
+    }
+    
+    private func addSubviews() {
         view.addSubview(searchButton)
         view.addSubview(giftBoxImage)
     }
