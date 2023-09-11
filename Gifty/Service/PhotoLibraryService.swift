@@ -7,14 +7,15 @@
 
 import UIKit
 import Photos
-import Jito
 
 class PhotoLibraryService {
     func createPhotoLibraryRequestAlert() -> UIAlertController {
-        let alertController = UIAlertController(title: "사진 앨범 접근 권한 필요", message: "이 기능을 사용하기 위해선 사진 앨범 접근이 필요합니다.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "사진 앨범 접근 권한 필요", message: "이 기능을 사용하기 위해선 모든 사진에 대한 접근이 필요합니다.", preferredStyle: .alert)
         
         let allowAction = UIAlertAction(title: "설정으로", style: .default) { _ in
-            let appSettings = #unwrap(URL(string: UIApplication.openSettingsURLString), message: "appSetting 경로가 잘못 되었습니다.")
+            guard let appSettings = URL(string: UIApplication.openSettingsURLString) else {
+                return print("appSetting 경로가 잘못 되었습니다.")
+            }
             if !UIApplication.shared.canOpenURL(appSettings) {
                 fatalError("열수 없는 링크입니다.")
             }
@@ -32,23 +33,20 @@ class PhotoLibraryService {
         return alertController
     }
     
-    func requestPermission(completion: @escaping (Bool) -> Void) {
-        let photosAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-        
+    func requestPermission() async -> Bool {
+        let photosAuthorizationStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
         switch photosAuthorizationStatus {
         case .authorized:
-            completion(true)
+            return true
         case .denied:
-            completion(false)
+            return false
         case .limited:
-            completion(false)
+            return false
         case .notDetermined:
-            PHPhotoLibrary.requestAuthorization(for: .readWrite) { newStatus in
-                completion(newStatus == .authorized)
-            }
-            completion(false)
+            let status = await PHPhotoLibrary.requestAuthorization(for: .readWrite)
+            return status == .authorized
         case .restricted:
-            completion(false)
+            return false
         @unknown default:
             fatalError("권한 설정에 오류가 있습니다.")
         }

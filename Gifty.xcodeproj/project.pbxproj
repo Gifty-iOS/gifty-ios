@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4338F7EE2A9F1DE300D8F511 /* Jito in Frameworks */ = {isa = PBXBuildFile; productRef = 4338F7ED2A9F1DE300D8F511 /* Jito */; };
-		4338F7F02A9F1DE300D8F511 /* JitoClient in Frameworks */ = {isa = PBXBuildFile; productRef = 4338F7EF2A9F1DE300D8F511 /* JitoClient */; };
 		4338F7F22AA065F100D8F511 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F7F12AA065F100D8F511 /* PhotoLibraryService.swift */; };
 		43A134DA2A9CE4B500428DC6 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */; };
 		43B9D0482A9B89E600EB8669 /* RangePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B9D0472A9B89E600EB8669 /* RangePopup.swift */; };
@@ -25,6 +23,7 @@
 		43F711702A972EF400939C9C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116F2A972EF400939C9C /* Const.swift */; };
 		43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711742A9733E000939C9C /* DetectBarcodeService.swift */; };
 		43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711762A97481C00939C9C /* GiftBoxImage.swift */; };
+		B79BC2BB2AAEE3F1005A54F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +64,7 @@
 		43F7116F2A972EF400939C9C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		43F711742A9733E000939C9C /* DetectBarcodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectBarcodeService.swift; sourceTree = "<group>"; };
 		43F711762A97481C00939C9C /* GiftBoxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBoxImage.swift; sourceTree = "<group>"; };
+		B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4338F7EE2A9F1DE300D8F511 /* Jito in Frameworks */,
-				4338F7F02A9F1DE300D8F511 /* JitoClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,13 +135,11 @@
 		43D2A4562A964B2A002453BE /* Gifty */ = {
 			isa = PBXGroup;
 			children = (
+				B79A992C2AAEDBC2008CF597 /* Application */,
 				4338F7F72AA06B9B00D8F511 /* Resources */,
 				43F711732A9733BA00939C9C /* Service */,
 				43F7116C2A972C7500939C9C /* Global */,
 				43F711692A972B3A00939C9C /* Presentation */,
-				43F711682A972B0B00939C9C /* ViewController */,
-				43D2A4572A964B2A002453BE /* AppDelegate.swift */,
-				43D2A4592A964B2A002453BE /* SceneDelegate.swift */,
 			);
 			path = Gifty;
 			sourceTree = "<group>";
@@ -176,6 +172,8 @@
 		43F711692A972B3A00939C9C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B79BC2B92AAEE3E5005A54F7 /* ViewModel */,
+				43F711682A972B0B00939C9C /* ViewController */,
 				4338F7F82AA0839A00D8F511 /* View */,
 			);
 			path = Presentation;
@@ -200,6 +198,23 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		B79A992C2AAEDBC2008CF597 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				43D2A4572A964B2A002453BE /* AppDelegate.swift */,
+				43D2A4592A964B2A002453BE /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B79BC2B92AAEE3E5005A54F7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,8 +232,6 @@
 			);
 			name = Gifty;
 			packageProductDependencies = (
-				4338F7ED2A9F1DE300D8F511 /* Jito */,
-				4338F7EF2A9F1DE300D8F511 /* JitoClient */,
 			);
 			productName = Gifty;
 			productReference = 43D2A4542A964B2A002453BE /* Gifty.app */;
@@ -293,7 +306,6 @@
 			);
 			mainGroup = 43D2A44B2A964B2A002453BE;
 			packageReferences = (
-				4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */,
 			);
 			productRefGroup = 43D2A4552A964B2A002453BE /* Products */;
 			projectDirPath = "";
@@ -348,6 +360,7 @@
 				4338F7F22AA065F100D8F511 /* PhotoLibraryService.swift in Sources */,
 				43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */,
 				43F711702A972EF400939C9C /* Const.swift in Sources */,
+				B79BC2BB2AAEE3F1005A54F7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -504,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -686,30 +699,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MojitoBar/jito-macros";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4338F7ED2A9F1DE300D8F511 /* Jito */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */;
-			productName = Jito;
-		};
-		4338F7EF2A9F1DE300D8F511 /* JitoClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4338F7EC2A9F1DE300D8F511 /* XCRemoteSwiftPackageReference "jito-macros" */;
-			productName = JitoClient;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43D2A44C2A964B2A002453BE /* Project object */;
 }
