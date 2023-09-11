@@ -10,11 +10,12 @@ import Combine
 
 class MainViewController: UIViewController {
     private let viewModel = MainViewModel()
+    private let defaultLabel = DefaultLabel(text: "불러온 사진이 없어요 🥲\n돋보기를 클릭해 기프티콘을 찾을 수 있어요!", size: 14, color: UIColor(hexCode: "333333"))
+    private let appLogo = AppLogo()
     private let detectBarcodeService = DetectBarcodeService()
     private let searchButton = SearchButton()
-    private let giftBoxImage = GiftBoxImage(image: UIImage(named: "GiftBox"))
-    private var cancellables = Set<AnyCancellable>()
     private let rangePopup = RangePopup()
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,21 @@ extension MainViewController {
 extension MainViewController {
     private func addSubviews() {
         view.addSubview(searchButton)
-        view.addSubview(giftBoxImage)
+        view.addSubview(appLogo)
+        view.addSubview(defaultLabel)
+        
+        appLogo.translatesAutoresizingMaskIntoConstraints = false
+        searchButton.translatesAutoresizingMaskIntoConstraints = false
+        defaultLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            appLogo.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            appLogo.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            searchButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            searchButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
+            defaultLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            defaultLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+        ])
     }
 }
 
@@ -60,6 +75,7 @@ extension MainViewController {
                 present(alert, animated: true, completion: nil)
             }
         }
+        searchButton.setupAction(action: serchButtonAction)
         
         rangePopup.setupAction(
             submit: UIAction { [self] _ in
@@ -67,6 +83,5 @@ extension MainViewController {
                 detectBarcodeService.detectBarcodeInImage(images: [])
             }
         )
-        searchButton.setupAction(action: serchButtonAction)
     }
 }

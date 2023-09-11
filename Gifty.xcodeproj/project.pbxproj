@@ -24,6 +24,13 @@
 		43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711742A9733E000939C9C /* DetectBarcodeService.swift */; };
 		43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711762A97481C00939C9C /* GiftBoxImage.swift */; };
 		B79BC2BB2AAEE3F1005A54F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */; };
+		B79BC2BD2AAEF7D0005A54F7 /* AppLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2BC2AAEF7D0005A54F7 /* AppLogo.swift */; };
+		B79BC2C62AAEFDB7005A54F7 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B79BC2C02AAEFDB7005A54F7 /* NanumSquareEB.ttf */; };
+		B79BC2C72AAEFDB7005A54F7 /* NanumSquareL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B79BC2C12AAEFDB7005A54F7 /* NanumSquareL.ttf */; };
+		B79BC2C82AAEFDB7005A54F7 /* NanumSquareB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B79BC2C22AAEFDB7005A54F7 /* NanumSquareB.ttf */; };
+		B79BC2C92AAEFDB7005A54F7 /* NanumSquareR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B79BC2C32AAEFDB7005A54F7 /* NanumSquareR.ttf */; };
+		B79BC2CC2AAEFE0A005A54F7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2CB2AAEFE0A005A54F7 /* Font.swift */; };
+		B79BC2CE2AAF00B9005A54F7 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2CD2AAF00B9005A54F7 /* DefaultLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		43F711742A9733E000939C9C /* DetectBarcodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectBarcodeService.swift; sourceTree = "<group>"; };
 		43F711762A97481C00939C9C /* GiftBoxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBoxImage.swift; sourceTree = "<group>"; };
 		B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B79BC2BC2AAEF7D0005A54F7 /* AppLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogo.swift; sourceTree = "<group>"; };
+		B79BC2C02AAEFDB7005A54F7 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
+		B79BC2C12AAEFDB7005A54F7 /* NanumSquareL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareL.ttf; sourceTree = "<group>"; };
+		B79BC2C22AAEFDB7005A54F7 /* NanumSquareB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareB.ttf; sourceTree = "<group>"; };
+		B79BC2C32AAEFDB7005A54F7 /* NanumSquareR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareR.ttf; sourceTree = "<group>"; };
+		B79BC2CB2AAEFE0A005A54F7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		B79BC2CD2AAF00B9005A54F7 /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,7 @@
 		4338F7F72AA06B9B00D8F511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B79BC2BE2AAEFDB7005A54F7 /* Font */,
 				43D2A4622A964B2D002453BE /* LaunchScreen.storyboard */,
 				43D2A4602A964B2D002453BE /* Assets.xcassets */,
 				43D2A4652A964B2D002453BE /* Info.plist */,
@@ -108,6 +123,8 @@
 				43F7116A2A972B5300939C9C /* SearchButton.swift */,
 				43F711762A97481C00939C9C /* GiftBoxImage.swift */,
 				43B9D0472A9B89E600EB8669 /* RangePopup.swift */,
+				B79BC2BC2AAEF7D0005A54F7 /* AppLogo.swift */,
+				B79BC2CD2AAF00B9005A54F7 /* DefaultLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +202,7 @@
 				43F7116D2A972C9500939C9C /* UIColor+Hex.swift */,
 				43F7116F2A972EF400939C9C /* Const.swift */,
 				43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */,
+				B79BC2CB2AAEFE0A005A54F7 /* Font.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -213,6 +231,25 @@
 				B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B79BC2BE2AAEFDB7005A54F7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B79BC2BF2AAEFDB7005A54F7 /* NanumSquare */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		B79BC2BF2AAEFDB7005A54F7 /* NanumSquare */ = {
+			isa = PBXGroup;
+			children = (
+				B79BC2C02AAEFDB7005A54F7 /* NanumSquareEB.ttf */,
+				B79BC2C12AAEFDB7005A54F7 /* NanumSquareL.ttf */,
+				B79BC2C22AAEFDB7005A54F7 /* NanumSquareB.ttf */,
+				B79BC2C32AAEFDB7005A54F7 /* NanumSquareR.ttf */,
+			);
+			path = NanumSquare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +360,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79BC2C72AAEFDB7005A54F7 /* NanumSquareL.ttf in Resources */,
+				B79BC2C62AAEFDB7005A54F7 /* NanumSquareEB.ttf in Resources */,
+				B79BC2C82AAEFDB7005A54F7 /* NanumSquareB.ttf in Resources */,
 				43D2A4642A964B2D002453BE /* LaunchScreen.storyboard in Resources */,
+				B79BC2C92AAEFDB7005A54F7 /* NanumSquareR.ttf in Resources */,
 				43D2A4612A964B2D002453BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +391,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D2A45C2A964B2A002453BE /* MainViewController.swift in Sources */,
+				B79BC2CE2AAF00B9005A54F7 /* DefaultLabel.swift in Sources */,
 				43D2A4582A964B2A002453BE /* AppDelegate.swift in Sources */,
+				B79BC2CC2AAEFE0A005A54F7 /* Font.swift in Sources */,
 				43D2A45A2A964B2A002453BE /* SceneDelegate.swift in Sources */,
 				43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */,
 				43B9D0482A9B89E600EB8669 /* RangePopup.swift in Sources */,
@@ -360,6 +403,7 @@
 				4338F7F22AA065F100D8F511 /* PhotoLibraryService.swift in Sources */,
 				43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */,
 				43F711702A972EF400939C9C /* Const.swift in Sources */,
+				B79BC2BD2AAEF7D0005A54F7 /* AppLogo.swift in Sources */,
 				B79BC2BB2AAEE3F1005A54F7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
