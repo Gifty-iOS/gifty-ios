@@ -136,4 +136,9 @@ class RangePopup: UIButton {
             submitButton.addAction(submit, for: .touchUpInside)
         }
     }
+    
+    func setPhotoCount(photoCount: Int) {
+        self.maxLen = photoCount
+        maxInput.placeholder = maxLen.description
+    }
 }
