@@ -137,7 +137,6 @@ class RangePopup: UIButton {
         }
     }
     
-    @MainActor
     func setPhotoCount(photoCount: Int) {
         self.maxLen = photoCount
         maxInput.placeholder = maxLen.description
