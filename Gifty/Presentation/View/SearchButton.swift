@@ -16,10 +16,8 @@ class SearchButton: UIButton {
     }
     
     init() {
-        super.init(frame: CGRect(x: Const.Screen.width / 2 - width / 2, y: Const.Screen.height / 2, width: width, height: height))
-        setupGradient(view: self)
-        setupStyle()
-        setupText()
+        super.init(frame: CGRect.zero)
+        setupImage()
     }
     
     func setupAction(action: UIAction? = nil) {
@@ -28,30 +26,8 @@ class SearchButton: UIButton {
         }
     }
     
-    func setupText() {
-        setTitle("기프티콘 찾기!", for: .normal)
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        titleLabel?.textColor = .white
-    }
-    
-    func setupStyle() {
-        layer.cornerRadius = 5
-        layer.masksToBounds = true
-    }
-    
-    func setupGradient(view: UIView) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [
-            UIColor.init(hexCode: Const.Color.gradientFirst),
-            UIColor.init(hexCode: Const.Color.gradientSecond),
-            UIColor.init(hexCode: Const.Color.gradientThird),
-        ].map{$0.cgColor}
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        gradientLayer.locations = [0, 0.5, 1]
-        
-        view.layer.addSublayer(gradientLayer)
+    func setupImage() {
+        setImage(UIImage(named: "search"), for: .normal)
     }
     
     required init?(coder: NSCoder) {
