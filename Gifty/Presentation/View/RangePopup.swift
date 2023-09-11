@@ -8,13 +8,12 @@
 import UIKit
 
 class RangePopup: UIButton {
-    private let width = 250
-    private let height = 165
+    private let width = 245
+    private let height = 134
 
     private let backgroundView = UIView()
     
     private let submitButton = UIButton()
-    private let cancelButton = UIButton()
     
     private let minInput = UITextField()
     private let maxInput = UITextField()
@@ -46,7 +45,6 @@ class RangePopup: UIButton {
     private func addSubview() {
         addSubview(backgroundView)
         backgroundView.addSubview(submitButton)
-        backgroundView.addSubview(cancelButton)
         backgroundView.addSubview(minInput)
         backgroundView.addSubview(maxInput)
         backgroundView.addSubview(waveText)
@@ -60,52 +58,48 @@ class RangePopup: UIButton {
                                              height: height)
         
         submitButton.translatesAutoresizingMaskIntoConstraints = false
-        submitButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -25).isActive = true
+        submitButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -16).isActive = true
         submitButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        submitButton.widthAnchor.constraint(equalToConstant: CGFloat(width - 50)).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         submitButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         minInput.translatesAutoresizingMaskIntoConstraints = false
-        minInput.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 60).isActive = true
+        minInput.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 44).isActive = true
         minInput.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 25).isActive = true
         minInput.widthAnchor.constraint(equalToConstant: CGFloat(width / 2) - 40).isActive = true
         minInput.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         maxInput.translatesAutoresizingMaskIntoConstraints = false
-        maxInput.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 60).isActive = true
+        maxInput.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 44).isActive = true
         maxInput.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -25).isActive = true
         maxInput.widthAnchor.constraint(equalToConstant: CGFloat(width / 2) - 40).isActive = true
         maxInput.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         waveText.translatesAutoresizingMaskIntoConstraints = false
-        waveText.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 60).isActive = true
+        waveText.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 53).isActive = true
         waveText.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 25).isActive = true
-        title.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 25).isActive = true
+        title.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        title.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 16).isActive = true
     }
     
     private func setStyle() {
         backgroundView.backgroundColor = .white
-        backgroundView.layer.shadowColor = UIColor.gray.cgColor
-        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        backgroundView.layer.shadowRadius = 4
-        backgroundView.layer.shadowOpacity = 0.3
+        backgroundView.layer.shadowColor = UIColor(red: 0.584, green: 0.616, blue: 0.647, alpha: 0.2).cgColor
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 8)
+        backgroundView.layer.shadowRadius = 24
+        backgroundView.layer.shadowOpacity = 1
         backgroundView.layer.cornerRadius = 8
         
-        submitButton.backgroundColor = UIColor.init(hexCode: "#0073cf")
-        submitButton.layer.cornerRadius = 8
-        submitButton.setTitle("확인", for: .normal)
+        submitButton.backgroundColor = UIColor.white
+        submitButton.layer.cornerRadius = 15
+        submitButton.layer.borderWidth = 1
+        submitButton.layer.borderColor = UIColor.init(hexCode: "#1F93FF").cgColor
+        submitButton.setTitle("스캔!", for: .normal)
         submitButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        submitButton.setTitleColor(.white, for: .normal)
+        submitButton.setTitleColor(UIColor.init(hexCode: "#1F93FF"), for: .normal)
         submitButton.layer.masksToBounds = true
-        
-        cancelButton.backgroundColor = .lightGray
-        cancelButton.layer.cornerRadius = 8
-        cancelButton.setTitle("취소", for: .normal)
-        cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        cancelButton.setTitleColor(.white, for: .normal)
         
         minInput.placeholder = "0"
         minInput.layer.borderColor = UIColor.lightGray.cgColor
@@ -124,11 +118,11 @@ class RangePopup: UIButton {
         maxInput.addLeftPadding()
         
         waveText.text = "~"
-        waveText.font = UIFont.boldSystemFont(ofSize: 20)
+        waveText.font = Fonts.nanumSquareR(size: 14)
         
-        title.text = "검색할 사진 범위를 입력해주세요."
-        title.textColor = UIColor(hexCode: "333333")
-        title.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        title.text = "스캔할 사진 범위를 지정해주세요."
+        title.textColor = UIColor(hexCode: "444444")
+        title.font = Fonts.nanumSquareR(size: 14)
     }
     
     func setupAction(submit: UIAction? = nil) {
