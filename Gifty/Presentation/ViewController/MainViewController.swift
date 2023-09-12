@@ -12,7 +12,6 @@ class MainViewController: UIViewController {
     private let viewModel = MainViewModel()
     private let defaultLabel = DefaultLabel(text: "불러온 사진이 없어요 🥲\n돋보기를 클릭해 기프티콘을 찾을 수 있어요!", size: 14, color: UIColor(hexCode: "333333"))
     private let appLogo = AppLogo()
-    private let detectBarcodeService = DetectBarcodeService()
     private let searchButton = SearchButton()
     private let rangePopup = RangePopup()
     private var cancellables = Set<AnyCancellable>()
@@ -79,8 +78,12 @@ extension MainViewController {
         
         rangePopup.setupAction(
             submit: UIAction { [self] _ in
-                rangePopup.removeFromSuperview()
-                detectBarcodeService.detectBarcodeInImage(images: [])
+                Task {
+                    rangePopup.removeFromSuperview()
+                    let barcodeImages = await viewModel.fetchPhotoImages()
+                    print(viewModel.getBarcodeImageCount())
+                    print(barcodeImages)
+                }
             }
         )
     }

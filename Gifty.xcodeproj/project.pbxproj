@@ -23,6 +23,7 @@
 		43F711702A972EF400939C9C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7116F2A972EF400939C9C /* Const.swift */; };
 		43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711742A9733E000939C9C /* DetectBarcodeService.swift */; };
 		43F711772A97481C00939C9C /* GiftBoxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F711762A97481C00939C9C /* GiftBoxImage.swift */; };
+		B7350A872AB02BA00026CF13 /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7350A862AB02BA00026CF13 /* Sequence+.swift */; };
 		B79BC2BB2AAEE3F1005A54F7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */; };
 		B79BC2BD2AAEF7D0005A54F7 /* AppLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2BC2AAEF7D0005A54F7 /* AppLogo.swift */; };
 		B79BC2C62AAEFDB7005A54F7 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B79BC2C02AAEFDB7005A54F7 /* NanumSquareEB.ttf */; };
@@ -31,6 +32,7 @@
 		B79BC2C92AAEFDB7005A54F7 /* NanumSquareR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B79BC2C32AAEFDB7005A54F7 /* NanumSquareR.ttf */; };
 		B79BC2CC2AAEFE0A005A54F7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2CB2AAEFE0A005A54F7 /* Font.swift */; };
 		B79BC2CE2AAF00B9005A54F7 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BC2CD2AAF00B9005A54F7 /* DefaultLabel.swift */; };
+		B7BAFB652AB04FF0007D6183 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = B7BAFB642AB04FF0007D6183 /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,7 @@
 		43F7116F2A972EF400939C9C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		43F711742A9733E000939C9C /* DetectBarcodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectBarcodeService.swift; sourceTree = "<group>"; };
 		43F711762A97481C00939C9C /* GiftBoxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBoxImage.swift; sourceTree = "<group>"; };
+		B7350A862AB02BA00026CF13 /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
 		B79BC2BA2AAEE3F1005A54F7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B79BC2BC2AAEF7D0005A54F7 /* AppLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogo.swift; sourceTree = "<group>"; };
 		B79BC2C02AAEFDB7005A54F7 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BAFB652AB04FF0007D6183 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +207,7 @@
 				43F7116F2A972EF400939C9C /* Const.swift */,
 				43A134D92A9CE4B500428DC6 /* UITextField+LeftPadding.swift */,
 				B79BC2CB2AAEFE0A005A54F7 /* Font.swift */,
+				B7350A862AB02BA00026CF13 /* Sequence+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			);
 			name = Gifty;
 			packageProductDependencies = (
+				B7BAFB642AB04FF0007D6183 /* Algorithms */,
 			);
 			productName = Gifty;
 			productReference = 43D2A4542A964B2A002453BE /* Gifty.app */;
@@ -343,6 +349,7 @@
 			);
 			mainGroup = 43D2A44B2A964B2A002453BE;
 			packageReferences = (
+				B7BAFB632AB04FF0007D6183 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 43D2A4552A964B2A002453BE /* Products */;
 			projectDirPath = "";
@@ -404,6 +411,7 @@
 				43F711752A9733E000939C9C /* DetectBarcodeService.swift in Sources */,
 				43F711702A972EF400939C9C /* Const.swift in Sources */,
 				B79BC2BD2AAEF7D0005A54F7 /* AppLogo.swift in Sources */,
+				B7350A872AB02BA00026CF13 /* Sequence+.swift in Sources */,
 				B79BC2BB2AAEE3F1005A54F7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +751,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7BAFB632AB04FF0007D6183 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7BAFB642AB04FF0007D6183 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7BAFB632AB04FF0007D6183 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43D2A44C2A964B2A002453BE /* Project object */;
 }
