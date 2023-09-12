@@ -56,4 +56,41 @@ class PhotoLibraryService {
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: .none)
         return fetchResult.count
     }
+    
+    func getPhotoImages() -> [UIImage?] {
+        let photoAssets = getPhotoAssets()
+        return photoAssets.map { asset in
+            self.photoAssetToUIImage(photoAsset: asset)
+        }
+    }
+    
+    func getPhotoAssets() -> [PHAsset] {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        
+        var photoAssets: [PHAsset] = []
+        for i in 0..<fetchResult.count {
+            print("사진 \(i)번째: \(fetchResult.object(at: i))")
+            photoAssets.append(fetchResult.object(at: i))
+        }
+        
+        return photoAssets
+    }
+    
+    func photoAssetToUIImage(photoAsset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.deliveryMode = .highQualityFormat
+        option.isSynchronous = true
+        
+        manager.requestImage(for: photoAsset, targetSize: CGSize(width: 550, height: 550), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            if let result = result{
+                thumbnail = result
+            }
+        })
+        
+        return thumbnail
+    }
 }

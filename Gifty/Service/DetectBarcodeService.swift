@@ -9,47 +9,42 @@ import Foundation
 
 import UIKit
 import Vision
+import Photos
 
 class DetectBarcodeService {
-    private var detectedBarcodes: Set<String> = []
-
-    func detectBarcodeInImage(images: [UIImage]) {
-        for image in images {
-            guard let cgImage = image.cgImage else {
+    var detectedBarcodes: Set<UIImage> = []
+    
+    func detectBarcodeInAsset(data: Data) {
+        let request = VNDetectBarcodesRequest { [self] (request, error) in
+            if let error = error {
+                print("Error detecting barcodes: \(error)")
                 return
             }
-            let request = VNDetectBarcodesRequest { [weak self] (request, error) in
-                if let error = error {
-                    print("Error detecting barcodes: \(error)")
-                    return
-                }
-
-                self?.processBarcodes(request: request, in: cgImage)
-            }
-
-            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            request.revision = VNDetectBarcodesRequestRevision1
-
-            do {
-                try handler.perform([request])
-            } catch {
-                print("Failed to perform request: \(error)")
-            }
+            
+            self.processBarcodes(request: request, data: data)
+        }
+        
+        let handler = VNImageRequestHandler(data: data, options: [:])
+        
+        do {
+            try handler.perform([request])
+        } catch {
+            print("Failed to perform request: \(error)")
         }
     }
-
-    func processBarcodes(request: VNRequest, in cgImage: CGImage) {
+    
+    func processBarcodes(request: VNRequest, data: Data) {
         guard let results = request.results as? [VNBarcodeObservation] else {
             return
         }
         
         for barcode in results {
-            if let payload = barcode.payloadStringValue {
-                detectedBarcodes.insert(payload)
-                print("Detected barcode with value: \(payload) and symbology: \(barcode.symbology.rawValue)")
+            if barcode.payloadStringValue != nil, barcode.symbology == .code128 {
+                print("find")
+                if let image = UIImage(data: data) {
+                    detectedBarcodes.insert(image)
+                }
             }
         }
-        
-        print("Find \(detectedBarcodes.count) barcodes")
     }
 }
